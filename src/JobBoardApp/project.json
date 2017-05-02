@@ -2,14 +2,15 @@
   "userSecretsId": "aspnet-JobBoardApp-bbdd27e0-2a9b-11e7-b33c-4be35ac7f22d",
 
   "dependencies": {
+    "Microsoft.AspNet.WebApi.Cors": "5.2.3",
     "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.0.0",
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
     "Microsoft.AspNetCore.Mvc": "1.0.0",
     "Microsoft.AspNetCore.Razor.Tools": {
-      "version": "1.0.0-preview2-final",
-      "type": "build"
+        "version": "1.0.0-preview2-final",
+        "type": "build"
     },
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",

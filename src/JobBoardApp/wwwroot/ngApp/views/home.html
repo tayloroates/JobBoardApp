@@ -4,8 +4,9 @@
 </p>
 
 <ul>
-    <li ng-repeat="job in controller.jobs">
-        {{job.name}}
+    <li ng-repeat="state in controller.jobs.response.states">
+        {{state.name}} - {{state.numJobs}}
+
     </li>
 </ul>
 <div>For more jobs <a href="http://api.glassdoor.com/api/api.htm?t.p=145417&t.k=jpMvfETM5pS&userip=0.0.0.0&useragent=&format=json&v=1&action=jobs-stats&returnStates=true&admLevelRequested=1">click here</a></div>

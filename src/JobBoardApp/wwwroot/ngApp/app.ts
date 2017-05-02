@@ -25,6 +25,12 @@ namespace JobBoardApp {
                 controller: JobBoardApp.Controllers.LoginController,
                 controllerAs: 'controller'
             })
+            .state('jobListings', {
+                url: '/jobListings',
+                templateUrl: '/ngApp/views/jobListings.html',
+                controller: JobBoardApp.Controllers.JobController,
+                controllerAs: 'controller'
+            })
             .state('register', {
                 url: '/register',
                 templateUrl: '/ngApp/views/register.html',

@@ -15,8 +15,10 @@
 
            / <a href="/secret">Secret</a> /
            <a href="/login" ng-show="!account.isLoggedIn()">Login</a> /
-           <a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a>
+           <a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a> 
+            <a href="/jobListings">Job Listings</a> /
             <a href='https://www.glassdoor.com/index.htm'>powered by <img src='https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a>
+            
            <div ng-show="account.isLoggedIn()">
                [{{account.getUserName()}}]
            </div> 

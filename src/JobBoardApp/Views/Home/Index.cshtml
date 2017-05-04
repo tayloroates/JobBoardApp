@@ -6,7 +6,18 @@
     <base href="/" />
 </head>
 <body ng-controller="AccountController as account">
-    <div class="container">
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+        <div class="nav-menu">
+            <ul>
+                <li class="current_page_item"><a href="/" title="Jobs">Home</a></li>
+                <li class="page_item page-item-7"><a href="/about">Post Job</a></li>
+                <li class="page_item page-item-8"><a href="/jobListing">Job Listing</a></li>
+                <li class="page_item page-item-9"><a href="#">Upload Resume</a></li>
+            </ul>
+        </div><!-- .nav-menu -->
+    </nav><!-- #site-navigation -->
+    @*<div class="container">
         <h1>JobBoardApp</h1>
         <div>
           <a href="/">Home</a> /
@@ -26,7 +37,7 @@
         <hr />
 
         <ui-view></ui-view>
-    </div>
+    </div>*@
 
     <!-- Library Files -->
     <script src="/bower_components/angular/angular.js"></script>

@@ -12,5 +12,6 @@
     "angular-animate": "1.x",
     "angular-touch": "1.x",
     "angular-ui-router": "0.x"
+
   }
 }

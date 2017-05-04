@@ -46,7 +46,6 @@ namespace JobBoardApp.Controllers {
             });
         }
         constructor(private $resource: ng.resource.IResourceService, private $http: ng.IHttpService) {
-            //t/*his.jobTitleResource = $resource(this.jobTitleUrl);*/
             $http.get(this.jobTitleUrl).then((results) => {
                 this.jobTitle = results.data;
             });

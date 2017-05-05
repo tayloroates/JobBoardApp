@@ -51,7 +51,9 @@ namespace JobBoardApp.Controllers {
             });
         }
     }
-
+    export class ResumeController {
+        public message = 'Hello from the about page!';
+    }
 
     export class SecretController {
         public secrets;

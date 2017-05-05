@@ -4,6 +4,7 @@
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
     <base href="/" />
+    <link href="~/css/site.css" rel="stylesheet" />
 </head>
 <body ng-controller="AccountController as account">
 
@@ -12,6 +13,7 @@
             <ul>
                 <li class="current_page_item"><a href="/" title="Jobs">Home</a></li>
                 <li class="page_item page-item-7"><a href="/about">Post Job</a></li>
+                <li class="page_item"><a href="/resume">Upload Resume</a></li>
                 <li class="page_item page-item-8"><a href="/jobListing">Job Listing</a></li>
                 <li class="page_item page-item-9"><a href="#">Upload Resume</a></li>
             </ul>
@@ -35,7 +37,7 @@
            </div> 
         </div>
         <hr />*@
-
+    <div>
         <ui-view></ui-view>
     </div>
 
@@ -46,6 +48,16 @@
     <script src="/bower_components/angular-touch/angular-touch.js"></script>
     <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="https://static.filestackapi.com/v3/filestack.js"></script>
+    <script>
+   var client = filestack.init('AKSYWyb7DTUGZgxi4yyZvz');
+   function showPicker() {
+       client.pick({
+       }).then(function(result) {
+           console.log(JSON.stringify(result.filesUploaded))
+       });
+   }
+    </script>
 
     <!-- App Files-->
     <script src="/ngapp/app.js"></script>

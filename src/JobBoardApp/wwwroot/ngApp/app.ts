@@ -49,12 +49,6 @@ namespace JobBoardApp {
                 controller: JobBoardApp.Controllers.AboutController,
                 controllerAs: 'controller'
             })
-            .state('resume', {
-                url: '/resume',
-                templateUrl: '/ngApp/views/resume.html',
-                controller: JobBoardApp.Controllers.ResumeController,
-                controllerAs: 'controller'
-            })
             .state('notFound', {
                 url: '/notFound',
                 templateUrl: '/ngApp/views/notFound.html'

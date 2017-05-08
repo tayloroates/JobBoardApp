@@ -46,7 +46,7 @@ namespace JobBoardApp.Data
                 };
                 await userManager.CreateAsync(mike, "Secret123!");
             }
-
+           
 
         }
 

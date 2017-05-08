@@ -24,6 +24,9 @@ namespace JobBoardApp.Controllers {
         }
     }
 
+    export class ResumeController {
+
+    }
 
     export class SecretController {
         public secrets;

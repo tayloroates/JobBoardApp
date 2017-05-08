@@ -1,6 +1,21 @@
-﻿<ul>
-    <li ng-repeat="employer in controller.jobTitle.response.employers">
-        <h2>{{employer.name}}</h2> <div></div>  <h3>{{employer.ceo.title}} <div></div>{{employer.industry}} <div></div><a>{{employer.website}}</a></h3>
-
-    </li>
-</ul>
+﻿
+<table class="table-fill">
+    <thead>
+        <tr>
+            <th class="text-left">Job Name</th>
+            <th class="text-left">Job Title</th>
+            <th class="text-left">Industry</th>
+            <th class="text-left">Location</th>
+            <th class="text-left">Website</th>
+        </tr>
+    </thead>
+    <tbody class="table-hover">
+        <tr ng-repeat="employer in controller.jobTitle.response.employers">
+            <td class="text-left">{{employer.name}}</td>
+            <td class="text-left">{{employer.featuredReview.jobTitle}}</td>
+            <td class="text-left">{{employer.industry}}</td>
+            <td class="text-left">{{employer.featuredReview.location}}</td>
+            <td class="text-left" ><a ui-sref="{{employer.website}}">{{employer.website}}</a></td>
+        </tr>
+    </tbody>
+</table>

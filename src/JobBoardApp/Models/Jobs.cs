@@ -15,5 +15,8 @@ namespace JobBoardApp.Models
         public string EmploymentType { get; set; }
         public decimal Salary { get; set; }
         public string Location { get; set; }
+        public string Industry { get; set; }
+
+        public ICollection<JobUser> JobUser { get; set; }
     }
 }

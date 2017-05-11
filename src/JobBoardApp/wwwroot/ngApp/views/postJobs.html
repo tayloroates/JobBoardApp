@@ -1,0 +1,33 @@
+﻿<form ng-submit="controller.addJob()">
+    <div>
+        <label for="employerName">Employer Name:</label>
+        <input id="employerName" ng-model="controller.jobToCreate.employerName" />
+    </div>
+    <br />
+    <div>
+        <label for="jobTitle">Job Title:</label>
+        <input id="jobTitle" ng-model="controller.jobToCreate.jobTitle" />
+    </div>
+    <br />
+    <div>
+        <label for="jobDescription">Job Description:</label>
+        <input id="jobDescription" ng-model="controller.jobToCreate.jobDescription" />
+    </div>
+    <br />
+    <div>
+        <label for="industry">Industry:</label>
+        <input id="industry" ng-model="controller.jobToCreate.industry" />
+    </div>
+    <br />
+    <div>
+        <label for="employmentType">Employment Type:</label>
+        <input id="employmentType" ng-model="controller.jobToCreate.employmentType" />
+    </div>
+    <br />
+    <div>
+        <label for="location">Location:</label>
+        <input id="location" ng-model="controller.jobToCreate.location" />
+    </div>
+    <br />
+    <input type="submit" value="Save" />
+</form>

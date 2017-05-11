@@ -13,11 +13,20 @@ namespace JobBoardApp {
                 controller: JobBoardApp.Controllers.HomeController,
                 controllerAs: 'controller'
             })
+            .state('postJobs', {
+                url: '/postJobs',
+                templateUrl: '/ngApp/views/postJobs.html',
+                controller: JobBoardApp.Controllers.PostJobController,
+                controllerAs: 'controller'
+            })
             .state('secret', {
                 url: '/secret',
                 templateUrl: '/ngApp/views/secret.html',
                 controller: JobBoardApp.Controllers.SecretController,
-                controllerAs: 'controller'
+                controllerAs: 'controller',
+                data: {
+                    requiresAuthentication: true,
+                }
             })
             .state('login', {
                 url: '/login',
@@ -29,6 +38,12 @@ namespace JobBoardApp {
                 url: '/jobListings',
                 templateUrl: '/ngApp/views/jobListings.html',
                 controller: JobBoardApp.Controllers.JobController,
+                controllerAs: 'controller'
+            })
+            .state('deleteJob', {
+                url: '/deleteJob',
+                templateUrl: '/ngApp/views/deleteJob.html',
+                controller: JobBoardApp.Controllers.JobDeleteController,
                 controllerAs: 'controller'
             })
             .state('resume', {
@@ -92,6 +107,26 @@ namespace JobBoardApp {
         $httpProvider.interceptors.push('authInterceptor');
     });
 
-    
+    angular.module('JobBoardApp').config(function ($httpProvider) {
+        $httpProvider.interceptors.push('authInterceptor');
+    });
+    angular.module('JobBoardApp').run((
+        $rootScope: ng.IRootScopeService,
+        $state: ng.ui.IStateService,
+        accountService: JobBoardApp.Services.AccountService
+    ) => {
+        $rootScope.$on('$stateChangeStart', (e, to) => {
+            // protect non-public views
+            if (to.data && to.data.requiresAuthentication) {
+                if (!accountService.isLoggedIn()) {
+                    e.preventDefault();
+                    $state.go('login');
+                }
+            }
+        });
+    });
+
+
+
 
 }

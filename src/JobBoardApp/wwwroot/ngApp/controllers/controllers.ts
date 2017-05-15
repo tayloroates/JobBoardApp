@@ -33,20 +33,19 @@ namespace JobBoardApp.Controllers {
             });
         }
 
-        //public saveJob() {
-        //    console.log(this.jobs);
-        //    this.JobService.addJob(this.jobs.id).then(
-        //        () => this.$state.go('secret')
-        //    );
+        public saveJob() {
+            console.log(this.jobs);
+            this.JobService.addJob(this.jobs.id).then(
+                () => this.$state.go('secret')
+            );
             
-        //}
+        }
 
-        public saveAJob(job) {
-            this.$http.post('/api/jobs', job).then((response) => {
-                this.$state.reload();
+        public saveAJob(id) {
+            this.$http.post('/api/jobs', id).then((response) => {
                 this.$state.go('secret')
             });
-            console.log(job);
+            console.log(id);
 
         }
 
@@ -80,8 +79,26 @@ namespace JobBoardApp.Controllers {
     }
     export class SecretController {
         public secrets;
+        public jobs;
 
-        constructor($http: ng.IHttpService) {
+        public saveJob() {
+            console.log(this.jobs);
+            this.JobService.addJob(this.jobs.id).then(
+                () => this.$state.go('secret')
+            );
+
+        }
+
+        public saveAJob(id) {
+            this.$http.post('/api/jobs', id).then((response) => {
+                this.$state.reload();
+                this.$state.go('secret')
+            });
+            console.log(id);
+
+        }
+
+        constructor(private $http: ng.IHttpService, private $resource: ng.resource.IResourceService, private JobService: JobBoardApp.Services.JobService, private $state: ng.ui.IStateService, $stateParams: ng.ui.IStateParamsService) {
             $http.get('/api/secrets').then((results) => {
                 this.secrets = results.data;
             });

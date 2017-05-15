@@ -13,10 +13,10 @@ namespace JobBoardApp {
                 controller: JobBoardApp.Controllers.HomeController,
                 controllerAs: 'controller'
             })
-            .state('postJobs', {
-                url: '/postJobs',
-                templateUrl: '/ngApp/views/postJobs.html',
-                controller: JobBoardApp.Controllers.PostJobController,
+            .state('savedJobs', {
+                url: '/savedJobs',
+                templateUrl: '/ngApp/views/savedJobs.html',
+                controller: JobBoardApp.Controllers.JobController,
                 controllerAs: 'controller'
             })
             .state('secret', {

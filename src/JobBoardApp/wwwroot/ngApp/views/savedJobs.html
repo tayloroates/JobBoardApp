@@ -1,0 +1,25 @@
+﻿
+<form ng-submit="controller.saveAJob()">
+    <table border="1" class="table table-striped">
+        <thead>
+            <tr>
+                <td>Type</td>
+                <td>Description</td>
+                <td>Price</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" ng-model="controller.jobToSave.industry" />  </td>
+                <td><input type="text" ng-model="controller.jobToSave.jobDescription" />  </td>
+                <td><input type="text" ng-model="controller.jobToSave.jobTitle" />  </td>
+                <td><input type="text" ng-model="controller.jobToSave.salary" />  </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+    <button class="button button5" ng-click="controller.editOrder()"> Submit</button>
+    <button class="button button5" ng-click="controller.deleteOrder()"> Delete</button>
+
+</form>

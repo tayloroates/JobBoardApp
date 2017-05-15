@@ -20,7 +20,7 @@ namespace JobBoardApp.Controllers {
         public jobList;
         public jobs;
         public jobTitle;
-        public jobToSave;
+      
         public jobTitleUrl = "http://api.glassdoor.com/api/api.htm?v=1&format=json&t.p=145417&t.k=jpMvfETM5pS&action=employers&q=pharmaceuticals&userip=192.168.43.42&useragent=Mozilla/%2F4.0";
         public getJobs() {
             this.jobList = this.JobResource.query();
@@ -41,13 +41,16 @@ namespace JobBoardApp.Controllers {
             
         //}
 
-        public saveAJob(id) {
-            this.$http.post('/api/jobs', id).then((response) => {
-                this.$state.reload();
-                this.$state.go('secret')
+        public jobToSave
+        saveAJob(job) {
+            alert('Your  job has been saved to your profile!')
+            this.$http.get('/api/jobs/:id').then((res) => {
+            this.jobToSave = res.data;
             });
-            console.log(id);
-
+            //this.$http.get('/api/jobs/${this.$stateParams['id']}')
+            this.$http.post('/api/jobs/:id', job,this.jobToSave).then(() => {
+                this.$state.go('jobListings')
+            });
         }
 
 
@@ -93,7 +96,7 @@ namespace JobBoardApp.Controllers {
 
         public deleteJob() {
             this.JobService.deleteJob(this.jobToDelete.id).then(
-                () => this.$state.go('secret')
+                () => this.$state.go('jobListings')
             );
         }
 
@@ -108,19 +111,18 @@ namespace JobBoardApp.Controllers {
         public message = 'Hello from the about page!';
     }
 
-    export class JobToSaveController {
-        public jobToSave;
+    //export class JobToSaveController {
+    //   
+    //    public saveJob() {
+    //        this.JobService.addJob(this.jobToSave.id).then(
+    //            () => this.$state.go('secret')
+    //        );
+    //    }
 
-        public saveJob() {
-            this.JobService.addJob(this.jobToSave.id).then(
-                () => this.$state.go('secret')
-            );
-        }
+//        constructor(private JobService: JobBoardApp.Services.JobService, private $state: ng.ui.IStateService, $stateParams: ng.ui.IStateParamsService) {
+//            this.jobToSave = JobService.getJob($stateParams['id'])
+//        }
+//    }
 
-        constructor(private JobService: JobBoardApp.Services.JobService, private $state: ng.ui.IStateService, $stateParams: ng.ui.IStateParamsService) {
-            this.jobToSave = JobService.getJob($stateParams['id'])
-        }
-    }
-
-    angular.module('JobBoardApp').controller('JobDeleteController', JobDeleteController);
+//    angular.module('JobBoardApp').controller('JobDeleteController', JobDeleteController);
 }

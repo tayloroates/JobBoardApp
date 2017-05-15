@@ -8,8 +8,8 @@ using JobBoardApp.Data;
 namespace JobBoardApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170512144503_many")]
-    partial class many
+    [Migration("20170515151727_fix")]
+    partial class fix
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

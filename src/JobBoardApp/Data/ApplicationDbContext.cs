@@ -16,7 +16,7 @@ namespace JobBoardApp.Data
         {
         }
         public DbSet<Jobs> Jobs { get; set; }
-        //public DbSet<User> User { get; set; }
+        public DbSet<User> User { get; set; }
         public DbSet<JobUser> JobUser { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {

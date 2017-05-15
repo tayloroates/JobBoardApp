@@ -40,7 +40,7 @@
             <td class="text-left">{{jobs.industry}}</td>
             <td class="text-left">{{jobs.employmentType}}</td>
             <td class="text-left">{{jobs.location}}</td>
-            <td><a ui-sref="Add({id: job.id})">Save Job</a></td>
+            <td><button ng-click="controller.saveAJob(jobs.id)">Save Job</button></td>
         </tr>
     </tbody>
 </table>

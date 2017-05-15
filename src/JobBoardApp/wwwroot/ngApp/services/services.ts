@@ -14,7 +14,7 @@ namespace JobBoardApp.Services {
         public deleteJob(id: number) {
             return this.jobResource.delete({ id: id }).$promise;
         }
-        public saveJob(id: number) {
+        public addJob(id: number) {
             return this.jobResource.save({id: id }).$promise
         }
         public getJob(id) {

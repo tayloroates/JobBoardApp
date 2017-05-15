@@ -89,6 +89,41 @@ namespace JobBoardApp.Migrations
                     b.ToTable("Jobs");
                 });
 
+            modelBuilder.Entity("JobBoardApp.Models.JobUser", b =>
+                {
+                    b.Property<int>("JobId");
+
+                    b.Property<string>("UserId");
+
+                    b.Property<int?>("JobsId");
+
+                    b.Property<int?>("UserId1");
+
+                    b.HasKey("JobId", "UserId");
+
+                    b.HasIndex("JobsId");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("UserId1");
+
+                    b.ToTable("JobUser");
+                });
+
+            modelBuilder.Entity("JobBoardApp.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole", b =>
                 {
                     b.Property<string>("Id");
@@ -194,6 +229,22 @@ namespace JobBoardApp.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("JobBoardApp.Models.JobUser", b =>
+                {
+                    b.HasOne("JobBoardApp.Models.Jobs", "Jobs")
+                        .WithMany("JobUser")
+                        .HasForeignKey("JobsId");
+
+                    b.HasOne("JobBoardApp.Models.ApplicationUser", "User")
+                        .WithMany("JobUser")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("JobBoardApp.Models.User")
+                        .WithMany("JobUser")
+                        .HasForeignKey("UserId1");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>

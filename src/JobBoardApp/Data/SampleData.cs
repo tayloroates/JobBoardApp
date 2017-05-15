@@ -59,12 +59,12 @@ namespace JobBoardApp.Data
 
                 context.SaveChanges();
 
-                // context.User.AddRange(
-                //    new User { FirstName = "Anthony", LastName = "Goodman" },
-                //    new User { FirstName = "Taylor", LastName = "Oates" },
-                //    new User { FirstName= "Jarvis", LastName = "Lankin"}
-                //);
-                // context.SaveChanges();
+                context.User.AddRange(
+                   new User { FirstName = "Anthony", LastName = "Goodman" },
+                   new User { FirstName = "Taylor", LastName = "Oates" },
+                   new User { FirstName = "Jarvis", LastName = "Lankin" }
+               );
+                context.SaveChanges();
 
                 // add many-to-many
                 context.JobUser.AddRange(

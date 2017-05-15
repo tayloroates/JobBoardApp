@@ -8,8 +8,8 @@ using JobBoardApp.Data;
 namespace JobBoardApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170511162633_industry")]
-    partial class industry
+    [Migration("20170512142609_start")]
+    partial class start
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -88,6 +88,23 @@ namespace JobBoardApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Jobs");
+                });
+
+            modelBuilder.Entity("JobBoardApp.Models.JobUser", b =>
+                {
+                    b.Property<int>("JobId");
+
+                    b.Property<string>("UserId");
+
+                    b.Property<int?>("JobsId");
+
+                    b.HasKey("JobId", "UserId");
+
+                    b.HasIndex("JobsId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("JobUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole", b =>
@@ -195,6 +212,18 @@ namespace JobBoardApp.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("JobBoardApp.Models.JobUser", b =>
+                {
+                    b.HasOne("JobBoardApp.Models.Jobs", "Jobs")
+                        .WithMany("JobUser")
+                        .HasForeignKey("JobsId");
+
+                    b.HasOne("JobBoardApp.Models.ApplicationUser", "User")
+                        .WithMany("JobUser")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>

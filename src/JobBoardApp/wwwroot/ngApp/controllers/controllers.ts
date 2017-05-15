@@ -41,12 +41,12 @@ namespace JobBoardApp.Controllers {
             
         //}
 
-        public saveAJob(id) {
-            this.$http.post('/api/jobs', id).then((response) => {
+        public saveAJob(job) {
+            this.$http.post('/api/jobs', job).then((response) => {
                 this.$state.reload();
                 this.$state.go('secret')
             });
-            console.log(id);
+            console.log(job);
 
         }
 

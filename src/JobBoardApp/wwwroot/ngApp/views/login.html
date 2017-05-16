@@ -1,5 +1,5 @@
 <fieldset>
-    <legend>Login with a Social Provider!</legend>
+    <legend>Login with a Social Provider</legend>
 
     <ul>
         <li ng-repeat="externalLogin in account.externalLogins">
@@ -7,7 +7,7 @@
         </li>
     </ul>
 
-<!--</fieldset>
+</fieldset>
 
 <fieldset>
     <legend>Login Locally</legend>
@@ -29,23 +29,4 @@
         <input type="submit" value="Login" />
         <a href="/register">Register</a>
     </form>
-</fieldset>-->
-    <form ng-submit="controller.login()" name="login-form" class="login-form">
-        <div class="header">
-            <h1>Login</h1>
-            <span></span>
-        </div>
-        <div class="content">
-            <input ng-model="controller.loginUser.email" type="text" class="input username" placeholder="Email" />
-            <div class="user-icon"></div>
-            <input ng-model="controller.loginUser.password" name="password" type="password" class="input password" placeholder="Password" />
-            <div class="pass-icon"></div>
-        </div>
-        <div class="footer">
-            <input type="submit" name="submit" value="Login" class="button" />
-            <a href="/register" value="Register" class="register">Register</a>
-        </div>
-    </form>
-    <div>
-    </div>
-    <div class="gradient"></div>
+</fieldset>

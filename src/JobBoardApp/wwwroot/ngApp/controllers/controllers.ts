@@ -125,6 +125,19 @@ namespace JobBoardApp.Controllers {
         public message = 'Hello from the about page!';
     }
 
+    export class JobDetailsController {
+
+        public job;
+
+
+        constructor($stateParams: ng.ui.IStateParamsService, private JobService: JobBoardApp.Services.JobService) {
+            this.job = this.JobService.getJob($stateParams["id"]);
+
+        }
+
+    }
+    angular.module('JobBoardApp').controller('JobDetailsController', JobDetailsController);
+
     export class JobToSaveController {
         public jobToSave;
 

@@ -21,7 +21,7 @@ namespace JobBoardApp.Services {
             return this.jobResource.get({ id: id });
         }
         constructor($resource: ng.resource.IResourceService) {
-            this.jobResource = $resource('/api/job/:id');
+            this.jobResource = $resource('/api/jobs/:id');
         }
 
     }

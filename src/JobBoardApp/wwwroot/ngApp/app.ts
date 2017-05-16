@@ -13,6 +13,12 @@ namespace JobBoardApp {
                 controller: JobBoardApp.Controllers.HomeController,
                 controllerAs: 'controller'
             })
+            .state('details', {
+                url: '/details/:id',
+                templateUrl: '/ngApp/views/details.html',
+                controller: JobBoardApp.Controllers.JobDetailsController,
+                controllerAs: 'controller'
+            })
             .state('postJobs', {
                 url: '/postJobs',
                 templateUrl: '/ngApp/views/postJobs.html',
@@ -41,7 +47,7 @@ namespace JobBoardApp {
                 controllerAs: 'controller'
             })
             .state('deleteJob', {
-                url: '/deleteJob',
+                url: '/deleteJob/:id',
                 templateUrl: '/ngApp/views/deleteJob.html',
                 controller: JobBoardApp.Controllers.JobDeleteController,
                 controllerAs: 'controller'

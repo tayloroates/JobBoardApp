@@ -25,7 +25,7 @@
         <tr>
             <th class="text-left">Job Name</th>
             <th class="text-left">Job Title</th>
-            <th class="text-left">Job Description</th>
+            <!--<th class="text-left">Job Description</th>-->
             <th class="text-left">Industry</th>
             <th class="text-left">Employment Type</th>
             <th class="text-left">Location</th>
@@ -35,8 +35,8 @@
     <tbody class="table-hover">
         <tr ng-repeat="jobs in controller.jobList">
             <td class="text-left">{{jobs.employerName}}</td>
-            <td class="text-left">{{jobs.jobTitle}}</td>
-            <td class="text-left">{{jobs.jobDescription}}</td>
+            <td class="text-left"><a ui-sref="details({ id: jobs.id })">{{jobs.jobTitle}}</a></td>
+            <!--<td class="text-left">{{jobs.jobDescription}}</td>-->
             <td class="text-left">{{jobs.industry}}</td>
             <td class="text-left">{{jobs.employmentType}}</td>
             <td class="text-left">{{jobs.location}}</td>

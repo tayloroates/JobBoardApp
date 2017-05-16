@@ -1,15 +1,4 @@
-﻿<html>
-<head>
-    <style>
-        .button5 {
-            border-radius: 12px;
-            padding: 7px 12px;
-        }
-    </style>
-</head>
-<body>
-</body>
-</html>
+﻿
 <table class="table-fill">
     <thead>
         <tr>
@@ -36,7 +25,7 @@
         <tr>
             <th class="text-left">Job Name</th>
             <th class="text-left">Job Title</th>
-            <th class="text-left">Job Description</th>
+            <!--<th class="text-left">Job Description</th>-->
             <th class="text-left">Industry</th>
             <th class="text-left">Employment Type</th>
             <th class="text-left">Location</th>
@@ -46,13 +35,13 @@
     <tbody class="table-hover">
         <tr ng-repeat="jobs in controller.jobList">
             <td class="text-left">{{jobs.employerName}}</td>
-            <td class="text-left">{{jobs.jobTitle}}</td>
-            <td class="text-left">{{jobs.jobDescription}}</td>
+            <td class="text-left"><a ui-sref="details({ id: jobs.id })">{{jobs.jobTitle}}</a></td>
+            <!--<td class="text-left">{{jobs.jobDescription}}</td>-->
             <td class="text-left">{{jobs.industry}}</td>
             <td class="text-left">{{jobs.employmentType}}</td>
             <td class="text-left">{{jobs.location}}</td>
-            <td><button class="button button5" ng-click="controller.saveAJob(jobs.id)">Save Job</button></td>
-            <td><button class="button button5" ng-click="controller.deleteJob(jobs.id)">Delete Job</button></td>
+            <td><button ng-click="controller.saveAJob(jobs.id)">Save Job</button></td>
+            <td><a ui-sref="deleteJob({id: jobs.id})">Delete</a></td>
         </tr>
     </tbody>
 </table>

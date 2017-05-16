@@ -1,4 +1,4 @@
-﻿<form ng-submit="controller.addJob()">
+﻿<!--<form ng-submit="controller.addJob()">
     <div>
         <label for="employerName">Employer Name:</label>
         <input id="employerName" ng-model="controller.jobToCreate.employerName" />
@@ -30,4 +30,36 @@
     </div>
     <br />
     <input type="submit" value="Save" />
-</form>
+</form>-->
+
+<div class="container">
+    <form id="contact" method="post" ng-submit="controller.postJob()">
+        <h3>
+            Post Job
+        </h3>
+    
+        <fieldset>
+            <input placeholder="Employer name" type="text" tabindex="1" ng-model="controller.jobToCreate.employerName" required autofocus>
+        </fieldset>
+        <fieldset>
+            <input placeholder="Job Title" type="text" tabindex="2" ng-model="controller.jobToCreate.jobTitle" required>
+        </fieldset>
+        <fieldset>
+            <textarea placeholder="Job Description" tabindex="3" ng-model="controller.jobToCreate.jobDescription" required></textarea>
+        </fieldset>
+        <fieldset>
+            <input placeholder="Industry" type="text" tabindex="4" ng-model="controller.jobToCreate.industry" required>
+        </fieldset>
+        <fieldset>
+            <input placeholder="Employment Type" type="text" tabindex="5"  ng-model="controller.jobToCreate.employmentType" required>
+        </fieldset>
+        <fieldset>
+            <input placeholder="Location" type="text" tabindex="6" ng-model="controller.jobToCreate.location" required>
+        </fieldset>
+        <fieldset>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Save</button>
+        </fieldset>
+    </form>
+
+
+</div>

@@ -13,10 +13,16 @@ namespace JobBoardApp {
                 controller: JobBoardApp.Controllers.HomeController,
                 controllerAs: 'controller'
             })
-            .state('savedJobs', {
-                url: '/savedJobs',
-                templateUrl: '/ngApp/views/savedJobs.html',
-                controller: JobBoardApp.Controllers.JobController,
+            .state('details', {
+                url: '/details/:id',
+                templateUrl: '/ngApp/views/details.html',
+                controller: JobBoardApp.Controllers.JobDetailsController,
+                controllerAs: 'controller'
+            })
+            .state('postJobs', {
+                url: '/postJobs',
+                templateUrl: '/ngApp/views/postJobs.html',
+                controller: JobBoardApp.Controllers.PostJobController,
                 controllerAs: 'controller'
             })
             .state('secret', {
@@ -25,7 +31,7 @@ namespace JobBoardApp {
                 controller: JobBoardApp.Controllers.SecretController,
                 controllerAs: 'controller',
                 data: {
-                    requiresAuthentication: true,
+                    requiresAuthentication: true
                 }
             })
             .state('login', {
@@ -41,10 +47,13 @@ namespace JobBoardApp {
                 controllerAs: 'controller'
             })
             .state('deleteJob', {
-                url: '/deleteJob',
+                url: '/deleteJob/:id',
                 templateUrl: '/ngApp/views/deleteJob.html',
                 controller: JobBoardApp.Controllers.JobDeleteController,
-                controllerAs: 'controller'
+                controllerAs: 'controller',
+                data: {
+                    requiresAuthentication: true
+                }
             })
             .state('resume', {
                 url: '/resume',

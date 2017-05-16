@@ -15,7 +15,7 @@ namespace JobBoardApp.Services {
             return this.jobResource.delete({ id: id }).$promise;
         }
         public addJob(id: number) {
-            return this.jobResource.save({ id: id }).$promise
+            return this.jobResource.save({id: id }).$promise
         }
         public getJob(id) {
             return this.jobResource.get({ id: id });
@@ -28,6 +28,4 @@ namespace JobBoardApp.Services {
     angular.module('JobBoardApp').service('JobService', JobService);
 
 }
-
-
 

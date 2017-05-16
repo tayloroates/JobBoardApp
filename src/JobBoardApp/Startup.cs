@@ -104,8 +104,8 @@ namespace JobBoardApp
                 );
             });
 
-           // initialize sample data
-           SampleData.Initialize(app.ApplicationServices).Wait();
+            // initialize sample data
+            SampleData.Initialize(app.ApplicationServices).Wait();
 
         }
     }

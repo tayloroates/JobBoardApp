@@ -1,0 +1,65 @@
+﻿<!--<form ng-submit="controller.addJob()">
+    <div>
+        <label for="employerName">Employer Name:</label>
+        <input id="employerName" ng-model="controller.jobToCreate.employerName" />
+    </div>
+    <br />
+    <div>
+        <label for="jobTitle">Job Title:</label>
+        <input id="jobTitle" ng-model="controller.jobToCreate.jobTitle" />
+    </div>
+    <br />
+    <div>
+        <label for="jobDescription">Job Description:</label>
+        <input id="jobDescription" ng-model="controller.jobToCreate.jobDescription" />
+    </div>
+    <br />
+    <div>
+        <label for="industry">Industry:</label>
+        <input id="industry" ng-model="controller.jobToCreate.industry" />
+    </div>
+    <br />
+    <div>
+        <label for="employmentType">Employment Type:</label>
+        <input id="employmentType" ng-model="controller.jobToCreate.employmentType" />
+    </div>
+    <br />
+    <div>
+        <label for="location">Location:</label>
+        <input id="location" ng-model="controller.jobToCreate.location" />
+    </div>
+    <br />
+    <input type="submit" value="Save" />
+</form>-->
+
+<div class="container">
+    <form id="contact" method="post" ng-submit="controller.postJob()">
+        <h3>
+            Post Job
+        </h3>
+    
+        <fieldset>
+            <input placeholder="Employer name" type="text" tabindex="1" ng-model="controller.jobToCreate.employerName" required autofocus>
+        </fieldset>
+        <fieldset>
+            <input placeholder="Job Title" type="text" tabindex="2" ng-model="controller.jobToCreate.jobTitle" required>
+        </fieldset>
+        <fieldset>
+            <textarea placeholder="Job Description" tabindex="3" ng-model="controller.jobToCreate.jobDescription" required></textarea>
+        </fieldset>
+        <fieldset>
+            <input placeholder="Industry" type="text" tabindex="4" ng-model="controller.jobToCreate.industry" required>
+        </fieldset>
+        <fieldset>
+            <input placeholder="Employment Type" type="text" tabindex="5"  ng-model="controller.jobToCreate.employmentType" required>
+        </fieldset>
+        <fieldset>
+            <input placeholder="Location" type="text" tabindex="6" ng-model="controller.jobToCreate.location" required>
+        </fieldset>
+        <fieldset>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Save</button>
+        </fieldset>
+    </form>
+
+
+</div>

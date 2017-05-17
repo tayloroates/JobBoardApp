@@ -1,2 +1,41 @@
 ﻿<h1>Job Details:</h1>
-<h3>{{controller.job.jobDescription}}</h3>
+<div>
+    <h2>Job Description:</h2>
+    <h3>{{controller.job.jobDescription}}</h3>
+</div>
+<br />
+<div>
+    <h2>Job Pay:</h2>
+    <h3>${{controller.job.salary}}/hr</h3>
+</div>
+
+<!--<table>
+    <thead>
+        <tr>
+            <th class="text-left">Job Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-left">{{controller.job.jobDescription}}</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<table>
+    <thead>
+        <tr>
+            <th class="text-left">Pay</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-left">${{controller.job.salary}}</td>
+        </tr>
+    </tbody>
+</table>-->
+<br />
+<div>
+    <button ng-click="controller.goBack()">Go Back</button>
+</div>
+ <!--| <button ng-click="controller.saveAJob(jobs.id)">Save Job</button>-->

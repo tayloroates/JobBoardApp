@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace JobBoardApp.Migrations
 {
-    public partial class fix : Migration
+    public partial class start : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -46,7 +46,8 @@ namespace JobBoardApp.Migrations
                     JobDescription = table.Column<string>(nullable: true),
                     JobTitle = table.Column<string>(nullable: true),
                     Location = table.Column<string>(nullable: true),
-                    Salary = table.Column<decimal>(nullable: false)
+                    Salary = table.Column<decimal>(nullable: false),
+                    Website = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

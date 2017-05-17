@@ -125,7 +125,7 @@ namespace JobBoardApp.Controllers {
 
         public deleteJob() {
             this.JobService.deleteJob(this.jobToDelete.id).then(
-                () => this.$state.go('jobListings')
+                () => this.$state.go('secret')
             );
         }
 

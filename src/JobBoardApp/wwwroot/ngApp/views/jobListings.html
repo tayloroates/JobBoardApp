@@ -29,7 +29,8 @@
             <th class="text-left">Industry</th>
             <th class="text-left">Employment Type</th>
             <th class="text-left">Location</th>
-            <th class="text-left"></th>
+            <th class="text-left">Website</th>
+            <!--<th class="text-left"></th>-->
         </tr>
     </thead>
     <tbody class="table-hover">
@@ -40,7 +41,8 @@
             <td class="text-left">{{jobs.industry}}</td>
             <td class="text-left">{{jobs.employmentType}}</td>
             <td class="text-left">{{jobs.location}}</td>
-            <td><button ng-click="controller.saveAJob(jobs.id)">Save Job</button></td>
+            <td class="text-left"><a href="{{jobs.website}}">Click Here</a></td>
+            <!--<td><button ng-click="controller.saveAJob(jobs.id)">Save Job</button></td>-->
             <!--<td><a ui-sref="deleteJob({id: jobs.id})">Delete</a></td>-->
         </tr>
     </tbody>

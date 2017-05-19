@@ -8,7 +8,7 @@ using JobBoardApp.Data;
 namespace JobBoardApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170517164240_start")]
+    [Migration("20170519205040_start")]
     partial class start
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -25,6 +25,12 @@ namespace JobBoardApp {
                 controller: JobBoardApp.Controllers.PostJobController,
                 controllerAs: 'controller'
             })
+            .state('editJob', {
+                url: '/editJob/:id',
+                templateUrl: '/ngApp/views/editJob.html',
+                controller: JobBoardApp.Controllers.JobEditController,
+                controllerAs: 'controller'
+            })
             .state('secret', {
                 url: '/secret',
                 templateUrl: '/ngApp/views/secret.html',

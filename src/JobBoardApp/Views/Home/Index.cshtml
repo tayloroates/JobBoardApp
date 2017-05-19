@@ -5,6 +5,8 @@
     <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
     <base href="/" />
     <link href="~/css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="bower_components/sweetalert2/dist/sweetalert2.min.css">
+    <link href="https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.css" /></link>
 </head>
 <body ng-controller="AccountController as account">
 
@@ -15,7 +17,7 @@
                 <li class="page_item page-item-7"><a href="/postJobs">Post Job</a></li>
                 <li class="page_item"><a href="/resume">Upload Resume</a></li>
                 <li class="page_item page-item-8"><a href="/jobListings">Job Listing</a></li>
-                <li class="page_item"><a href="/secret">Saved Jobs</a></li>
+                <li class="page_item"><a href="/secret">Admin</a></li>
                 <li class="page_item"><a href='https://www.glassdoor.com'>powered by <img src='https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a></li>
             </ul>
         </div><!-- .nav-menu -->
@@ -59,6 +61,9 @@
        });
    }
     </script>
+    <script src="bower_components/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/sweetalert2/6.6.2/sweetalert2.min.js"></script>
+
 
     <!-- App Files-->
     <script src="/ngapp/app.js"></script>

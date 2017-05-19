@@ -1,10 +1,10 @@
-﻿<h1>Job Details:</h1>
-<div >
+﻿<h1 class="jobDetails">Job Details:</h1>
+<div class="jobDetails">
     <h2>Job Description:</h2>
     <h3>{{controller.job.jobDescription}}</h3>
 </div>
 <br />
-<div>
+<div class="jobDetails">
     <h2>Job Pay:</h2>
     <h3>${{controller.job.salary}}/hr</h3>
 </div>
@@ -36,6 +36,6 @@
 </table>-->
 <br />
 <div>
-    <button ng-click="controller.goBack()">Go Back</button> | <button>Apply</button>
+    <button ui-sref="jobListings" >Go Back</button> | <button>Apply</button>
 </div>
  <!--| <button ng-click="controller.saveAJob(jobs.id)">Save Job</button>-->

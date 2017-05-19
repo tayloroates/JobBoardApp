@@ -122,7 +122,7 @@ namespace JobBoardApp.Controllers {
 
     export class JobDeleteController {
         public jobToDelete;
-
+        
         public deleteJob() {
             this.JobService.deleteJob(this.jobToDelete.id).then(
                 () => this.$state.go('secret')
@@ -139,6 +139,22 @@ namespace JobBoardApp.Controllers {
     export class AboutController {
         public message = 'Hello from the about page!';
     }
+
+    export class JobEditController {
+        public jobToEdit;
+
+        public editJob() {
+            this.JobService.save(this.jobToEdit).then(
+                () => this.$state.go('secret')
+            );
+        }
+
+        constructor(private JobService: JobBoardApp.Services.JobService, private $state: ng.ui.IStateService, $stateParams: ng.ui.IStateParamsService) {
+            this.jobToEdit = JobService.getJob($stateParams['id'])
+        }
+        
+    }
+    angular.module('JobBoardApp').controller('JobEditController', JobEditController);
 
     export class JobDetailsController {
 

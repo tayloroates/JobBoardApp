@@ -8,6 +8,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.jobDetails {
+    color: white;
+}
+
 div.table-title {
    display: block;
   margin: auto;
